@@ -1,9 +1,9 @@
 import React from "react";
 import Trabajo from "../images/Trabajo.jpg";
-import Imagen from "../images/Html.jpg";
 import "./Navbar.css";
 import * as Icon from 'react-bootstrap-icons';
-//import { FcDown } from "react-icons/fc";
+import Tecnologias  from "./Tecnologias";
+import Proyectos from './Proyects'; 
 const Inicio = () => {
   return (
     <>
@@ -19,6 +19,8 @@ const Inicio = () => {
         </div>
       </div>
     </section>
+    <Tecnologias/>
+    <Proyectos/> 
     </>
   );
 };

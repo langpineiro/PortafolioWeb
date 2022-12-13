@@ -6,12 +6,12 @@ function Navbar() {
     <>
       <ul id="navbar" className="nav justify-content-center">
         <li className="nav-item">
-          <a className="nav-link active" aria-current="page" href="#">
+          <a className="nav-link active" aria-current="page" href="/">
              ¿Quién soy?
           </a>
         </li>
         <li className="nav-item">
-          <a className="nav-link active" href="#">
+          <a className="nav-link active" href="/contact">
              Contactar
           </a>
         </li>

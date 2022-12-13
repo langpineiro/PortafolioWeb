@@ -10,6 +10,9 @@ img{
 span{
     color:brown;
 }
-
-#quiensoy{
+.card{
+  transition: all 400ms ease;
+}
+.card:hover{
+   transform: translateY(-3%);
 }
