@@ -1,5 +1,4 @@
 import React from "react";
-import Logo from "../images/logo.jpg";
 import "./Login.css";
 import { useFormik } from "formik";
 import * as yup from "yup";
@@ -32,10 +31,10 @@ const FormContacto = () => {
     validationSchema: validationSchema,
     onSubmit: (values) => {
       alert(JSON.stringify({
-         "Nombre": values.Nombre,
-         "Apellido": values.apellido,
-         "email": values.email,
-         "motivo": values.motivo
+        'nombre': values.Nombre,
+        'apellido':  values.apellido,
+        'email':  values.email,
+        'motivo':  values.motivo
       }));
       window.location.reload(true); 
     },
