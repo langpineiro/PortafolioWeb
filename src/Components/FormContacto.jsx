@@ -1,14 +1,15 @@
 import React from "react";
 import Logo from "../images/logo.jpg";
+import  './Login.css'; 
 const FormContacto = () => {
   return (
     <div class="container  w-75  bg-primary mt-5 rounded shadow">
       <div class="row align-items-stretch">
         <div class="col bg d-none d-lg-block col-md-5 col-lg-5 col-xl-6 rounded">
-          <img
+          {/* <img
             src={Logo}
-            className="img-fluid align-items:center justify-content:center"
-          />
+            className="img-fluid bg"
+          /> */}
         </div>
         <div class="col bg-white p-5 rounded-end">
           <h2 class="fw-bold text-center py-5">Contactar</h2>
