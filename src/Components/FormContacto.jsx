@@ -8,14 +8,14 @@ const validationSchema = yup.object({
   Nombre: yup
     .string("Ingresa un tu nombre")
     .required("el nombre  es requerido"),
-  apellido: yup
+  Apellido: yup
     .string("ingresa una descripcion a la categoria")
     .required("el apellido es requerido"),
-  email: yup
+  Correo: yup
     .string("ingresa tu correo electrónico de contacto")
     .email("correo electrónico inválido")
     .required("el correo electrónico es requerido"),
-  motivo: yup
+  Motivo: yup
     .string("ingresa el motivo de tu contacto")
     .required("el motivo es requerido"),
 });
@@ -24,17 +24,17 @@ const FormContacto = () => {
   const formik = useFormik({
     initialValues: {
       Nombre: "",
-      apellido: "",
-      email: "",
-      motivo: "",
+      Apellido: "",
+      Correo: "",
+      Motivo: "",
     },
     validationSchema: validationSchema,
     onSubmit: (values) => {
       alert(JSON.stringify({
         'nombre': values.Nombre,
-        'apellido':  values.apellido,
-        'email':  values.email,
-        'motivo':  values.motivo
+        'apellido':  values.Apellido,
+        'email':  values.Correo,
+        'motivo':  values.Motivo
       }));
       window.location.reload(true); 
     },
@@ -73,18 +73,18 @@ const FormContacto = () => {
               <input
                 type="text2"
                 class="form-control"
-                name="apellido"
-                id="apellido"
-                value={formik.values.apellido}
+                name="Apellido"
+                id="Apellido"
+                value={formik.values.Apellido}
                 onChange={formik.handleChange}
                 onBlur={formik.handleBlur}
                 error={
-                  formik.touched.apellido && Boolean(formik.errors.apellido)
+                  formik.touched.Apellido && Boolean(formik.errors.Apellido)
                 }
-                helperText={formik.touched.apellido && formik.errors.apellido}
+                helperText={formik.touched.Apellido && formik.errors.Apellido}
               />
-              {formik.touched.apellido && Boolean(formik.errors.apellido) ? (
-                <div className="text-danger">{formik.errors.apellido}</div>
+              {formik.touched.Apellido && Boolean(formik.errors.Apellido) ? (
+                <div className="text-danger">{formik.errors.Apellido}</div>
               ) : null}
             </div>
             <div class="mb-4">
@@ -94,33 +94,33 @@ const FormContacto = () => {
               <input
                 type="email"
                 class="form-control"
-                name="email"
-                id="email"
-                value={formik.values.email}
+                name="Correo"
+                id="Correo"
+                value={formik.values.Correo}
                 onChange={formik.handleChange}
                 onBlur={formik.handleBlur}
-                error={formik.touched.email && Boolean(formik.errors.email)}
-                helperText={formik.touched.email && formik.errors.email}
+                error={formik.touched.Correo && Boolean(formik.errors.Correo)}
+                helperText={formik.touched.Correo && formik.errors.Correo}
               />
-              {formik.touched.email && Boolean(formik.errors.email)? (
-                <div className="text-danger">{formik.errors.email}</div>
+              {formik.touched.Correo && Boolean(formik.errors.Correo)? (
+                <div className="text-danger">{formik.errors.Correo}</div>
               ): null}
             </div>
             <div class="mb-4">
               <label for="textarea">Motivo</label>
               <textarea
                 class="form-control"
-                id="motivo"
-                name="motivo"
+                id="Motivo"
+                name="Motivo"
                 rows="3"
-                value={formik.values.motivo}
+                value={formik.values.Motivo}
                 onChange={formik.handleChange}
                 onBlur={formik.handleBlur}
-                error={formik.touched.motivo && Boolean(formik.errors.motivo)}
-                helperText={formik.touched.motivo && formik.errors.motivo}
+                error={formik.touched.Motivo && Boolean(formik.errors.Motivo)}
+                helperText={formik.touched.Motivo && formik.errors.Motivo}
               ></textarea>
-              {formik.touched.motivo && Boolean(formik.errors.motivo)? (
-                <div className="text-danger">{formik.errors.motivo}</div>
+              {formik.touched.Motivo && Boolean(formik.errors.Motivo)? (
+                <div className="text-danger">{formik.errors.Motivo}</div>
               ): null}
             </div>
             <div class="d-grid">
