@@ -8,12 +8,12 @@ import lenguaje from '../images/logoC.png'
 import "./Navbar.css";
 const Tecnologias = () => {
   return (
-    <div class="container text-center align-items:center justify-content: center">
+    <div className="container text-center align-items:center justify-content: center">
       <h2>
         <span>Experiencia</span> en{" "}
       </h2>
-      <div class="row row-cols-auto">
-        <div class="col">
+      <div className="row row-cols-auto">
+        <div className="col">
           <div
             className="card rounded shadow"
             style={{ width: "300px", marginTop: "10px" }}
@@ -28,7 +28,7 @@ const Tecnologias = () => {
             </div>
           </div>
         </div>
-        <div class="col">
+        <div className="col">
           <div
             className="card rounded shadow"
             style={{ width: "300px", marginTop: "10px" }}
@@ -44,7 +44,7 @@ const Tecnologias = () => {
             </div>
           </div>
         </div>
-        <div class="col">
+        <div className="col">
           <div
             className="card rounded shadow"
             style={{ width: "300px", marginTop: "10px" }}
@@ -62,7 +62,7 @@ const Tecnologias = () => {
             </div>
           </div>
         </div>
-        <div class="col">
+        <div className="col">
           <div
             className="card rounded shadow"
             style={{ width: "300px", marginTop: "10px" }}
@@ -76,7 +76,7 @@ const Tecnologias = () => {
             </div>
           </div>
         </div>
-        <div class="col">
+        <div className="col">
           <div
             className="card rounded shadow"
             style={{ width: "300px", marginTop: "10px" }}
@@ -90,7 +90,7 @@ const Tecnologias = () => {
             </div>
           </div>
         </div>
-        <div class="col">
+        <div className="col">
           <div
             className="card rounded shadow"
             style={{ width: "300px", marginTop: "10px" }}

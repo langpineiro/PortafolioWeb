@@ -2,7 +2,7 @@ import React from "react";
 import "./Login.css";
 import { useFormik } from "formik";
 import * as yup from "yup";
-import { json } from "react-router";
+import axios from 'axios'; 
 
 const validationSchema = yup.object({
   Nombre: yup
@@ -23,37 +23,34 @@ const validationSchema = yup.object({
 const FormContacto = () => {
   const formik = useFormik({
     initialValues: {
-      Nombre: "",
-      Apellido: "",
-      Correo: "",
-      Motivo: "",
+      "Nombre": "",
+      "Apellido": "",
+      "Correo": "",
+      "Motivo": "",
     },
     validationSchema: validationSchema,
-    onSubmit: (values) => {
-      alert(JSON.stringify({
-        'nombre': values.Nombre,
-        'apellido':  values.Apellido,
-        'email':  values.Correo,
-        'motivo':  values.Motivo
-      }));
+    onSubmit: async  (values) => {
+      await axios.post("https://solicitudesportafolioweb-production.up.railway.app/", values)
+            .then(res => alert('Informacion Enviada Correctamente ', res.data.Nombre))
+            .catch(err => console.error(err)); 
       window.location.reload(true); 
     },
   });
   return (
-    <div class="container  w-75  bg-primary mt-5 rounded shadow">
-      <div class="row align-items-stretch">
-        <div class="col bg d-none d-lg-block col-md-5 col-lg-5 col-xl-6 rounded"></div>
-        <div class="col bg-white p-5 rounded-end">
-          <h2 class="fw-bold text-center py-5">Contactar</h2>
+    <div className="container  w-75  bg-primary mt-5 rounded shadow">
+      <div className="row align-items-stretch">
+        <div className="col bg d-none d-lg-block col-md-5 col-lg-5 col-xl-6 rounded"></div>
+        <div className="col bg-white p-5 rounded-end">
+          <h2 className="fw-bold text-center py-5">Contactar</h2>
 
           <form onSubmit={formik.handleSubmit}>
-            <div class="mb-4">
-              <label for="text" class="form-label">
+            <div className="mb-4">
+              <label htmlFor="text" className="form-label">
                 Nombre
               </label>
               <input
                 type="text"
-                class="form-control"
+                className="form-control"
                 id="Nombre"
                 name="Nombre"
                 value={formik.values.Nombre}
@@ -66,13 +63,13 @@ const FormContacto = () => {
                 <div className="text-danger">{formik.errors.Nombre}</div>
               ) : null}
             </div>
-            <div class="mb-4">
-              <label for="text2" class="form-label">
+            <div className="mb-4">
+              <label htmlFor="text2" className="form-label">
                 Apellido
               </label>
               <input
                 type="text2"
-                class="form-control"
+                className="form-control"
                 name="Apellido"
                 id="Apellido"
                 value={formik.values.Apellido}
@@ -87,13 +84,13 @@ const FormContacto = () => {
                 <div className="text-danger">{formik.errors.Apellido}</div>
               ) : null}
             </div>
-            <div class="mb-4">
-              <label for="email" class="form-label">
+            <div className="mb-4">
+              <label htmlFor="email" className="form-label">
                 Correo electronico
               </label>
               <input
                 type="email"
-                class="form-control"
+                className="form-control"
                 name="Correo"
                 id="Correo"
                 value={formik.values.Correo}
@@ -106,10 +103,10 @@ const FormContacto = () => {
                 <div className="text-danger">{formik.errors.Correo}</div>
               ): null}
             </div>
-            <div class="mb-4">
-              <label for="textarea">Motivo</label>
+            <div className="mb-4">
+              <label htmlFor="textarea">Motivo</label>
               <textarea
-                class="form-control"
+                className="form-control"
                 id="Motivo"
                 name="Motivo"
                 rows="3"
@@ -123,8 +120,8 @@ const FormContacto = () => {
                 <div className="text-danger">{formik.errors.Motivo}</div>
               ): null}
             </div>
-            <div class="d-grid">
-              <button type="submit" class="btn btn-danger">
+            <div className="d-grid">
+              <button type="submit" className="btn btn-danger">
                 Enviar
               </button>
             </div>

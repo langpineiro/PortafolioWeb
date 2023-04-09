@@ -6,7 +6,7 @@ const Footer = () => {
       <footer className="text-center" >
         <div className="container pt-4">
           <section className="mb-4">
-            <a class="btn btn-outline-dark" role="button" href="https://github.com/langpineiro" target="_blank"><Icon.Github/></a>
+            <a className="btn btn-outline-dark" role="button" href="https://github.com/langpineiro" target="_blank"><Icon.Github/></a>
             <a
               className="btn btn-outline-danger m-1"
               href="https://instagram.com/anthony_lang_pineiro?igshid=YmMyMTA2M2Y="
