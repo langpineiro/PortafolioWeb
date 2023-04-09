@@ -56,7 +56,7 @@ const FormContacto = () => {
                 value={formik.values.Nombre}
                 onChange={formik.handleChange}
                 onBlur={formik.handleBlur}
-                error={formik.touched.Nombre && Boolean(formik.errors.Nombre)}
+                error={formik.touched.Nombre && Boolean(formik.errors.Nombre) ? 'true' :undefined}
                 title={formik.touched.Nombre && formik.errors.Nombre}
               />
               {formik.touched.Nombre && Boolean(formik.errors.Nombre) ? (
@@ -76,7 +76,7 @@ const FormContacto = () => {
                 onChange={formik.handleChange}
                 onBlur={formik.handleBlur}
                 error={
-                  formik.touched.Apellido && Boolean(formik.errors.Apellido) 
+                  formik.touched.Apellido && Boolean(formik.errors.Apellido) ? 'true' :undefined
                 }
                 title={formik.touched.Apellido && formik.errors.Apellido}
               />
@@ -96,7 +96,7 @@ const FormContacto = () => {
                 value={formik.values.Correo}
                 onChange={formik.handleChange}
                 onBlur={formik.handleBlur}
-                error={formik.touched.Correo &&  Boolean(formik.errors.Correo)}
+                error={formik.touched.Correo &&  Boolean(formik.errors.Correo)? 'true' :undefined}
                 title={formik.touched.Correo && formik.errors.Correo}
               />
               {formik.touched.Correo && Boolean(formik.errors.Correo)? (
@@ -113,7 +113,7 @@ const FormContacto = () => {
                 value={formik.values.Motivo}
                 onChange={formik.handleChange}
                 onBlur={formik.handleBlur}
-                error={formik.touched.Motivo && Boolean(formik.errors.Motivo)}
+                error={formik.touched.Motivo && Boolean(formik.errors.Motivo) ? 'true' :undefined}
                 title={formik.touched.Motivo && formik.errors.Motivo}
               ></textarea>
               {formik.touched.Motivo && Boolean(formik.errors.Motivo)? (
