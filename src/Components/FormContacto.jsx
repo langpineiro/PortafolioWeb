@@ -23,10 +23,10 @@ const validationSchema = yup.object({
 const FormContacto = () => {
   const formik = useFormik({
     initialValues: {
-      "Nombre": "",
-      "Apellido": "",
-      "Correo": "",
-      "Motivo": "",
+      Nombre: "",
+      Apellido: "",
+      Correo: "",
+      Motivo: "",
     },
     validationSchema: validationSchema,
     onSubmit: async  (values) => {
@@ -57,7 +57,7 @@ const FormContacto = () => {
                 onChange={formik.handleChange}
                 onBlur={formik.handleBlur}
                 error={formik.touched.Nombre && Boolean(formik.errors.Nombre)}
-                helperText={formik.touched.Nombre && formik.errors.Nombre}
+                title={formik.touched.Nombre && formik.errors.Nombre}
               />
               {formik.touched.Nombre && Boolean(formik.errors.Nombre) ? (
                 <div className="text-danger">{formik.errors.Nombre}</div>
@@ -76,9 +76,9 @@ const FormContacto = () => {
                 onChange={formik.handleChange}
                 onBlur={formik.handleBlur}
                 error={
-                  formik.touched.Apellido && Boolean(formik.errors.Apellido)
+                  formik.touched.Apellido && Boolean(formik.errors.Apellido) 
                 }
-                helperText={formik.touched.Apellido && formik.errors.Apellido}
+                title={formik.touched.Apellido && formik.errors.Apellido}
               />
               {formik.touched.Apellido && Boolean(formik.errors.Apellido) ? (
                 <div className="text-danger">{formik.errors.Apellido}</div>
@@ -96,8 +96,8 @@ const FormContacto = () => {
                 value={formik.values.Correo}
                 onChange={formik.handleChange}
                 onBlur={formik.handleBlur}
-                error={formik.touched.Correo && Boolean(formik.errors.Correo)}
-                helperText={formik.touched.Correo && formik.errors.Correo}
+                error={formik.touched.Correo &&  Boolean(formik.errors.Correo)}
+                title={formik.touched.Correo && formik.errors.Correo}
               />
               {formik.touched.Correo && Boolean(formik.errors.Correo)? (
                 <div className="text-danger">{formik.errors.Correo}</div>
@@ -114,7 +114,7 @@ const FormContacto = () => {
                 onChange={formik.handleChange}
                 onBlur={formik.handleBlur}
                 error={formik.touched.Motivo && Boolean(formik.errors.Motivo)}
-                helperText={formik.touched.Motivo && formik.errors.Motivo}
+                title={formik.touched.Motivo && formik.errors.Motivo}
               ></textarea>
               {formik.touched.Motivo && Boolean(formik.errors.Motivo)? (
                 <div className="text-danger">{formik.errors.Motivo}</div>
