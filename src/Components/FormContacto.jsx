@@ -1,9 +1,8 @@
 import React from "react";
 import "./Login.css";
-import { useFormik, useFormikContext } from "formik";
+import { useFormik} from "formik";
 import * as yup from "yup";
 import axios from 'axios'; 
-import { useNavigate } from 'react-router-dom';
 
 const validationSchema = yup.object({
   Nombre: yup
@@ -22,7 +21,6 @@ const validationSchema = yup.object({
 });
 
 const FormContacto = () => {
-  const navigate = useNavigate(); 
   const formik = useFormik({
     initialValues: {
       Nombre: "",
@@ -33,11 +31,8 @@ const FormContacto = () => {
     validationSchema: validationSchema,
     onSubmit: async  (values) => {
       await axios.post("https://solicitudesportafolioweb-production.up.railway.app/", values)
-            .then(res => alert('Informacion Enviada Correctamente ', res.data.Nombre))
+            .then(res => alert('Informacion Enviada Correctamente '))
             .catch(err => console.error(err)); 
-            setTimeout(() => {
-               navigate('/');
-            }, 3000);
     },
   });
   return (
